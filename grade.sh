@@ -8,7 +8,7 @@ mkdir grading-area
 git clone $1 student-submission
 set -e
 files = `find grading-area`
-for file $files
+for file in $files
 do
   if [[ -f file]] && [[ $file == *.java]]
   then
