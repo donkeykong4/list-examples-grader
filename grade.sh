@@ -6,6 +6,15 @@ rm -rf grading-area
 mkdir grading-area
 
 git clone $1 student-submission
+set -e
+files = `find grading-area`
+for file $files
+do
+  if [[ -f file]] && [[ $file == *.java]]
+  then
+    java GradeServer < $file
+  fi
+done
 echo 'Finished cloning'
 
 
